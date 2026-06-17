@@ -32,7 +32,7 @@ function NotesPage() {
 
   return (
     <main className="page">
-      <h1>Catatan Anda</h1>
+      <h1>Catatan Saya</h1>
       {error && <p className="error">{error}</p>}
       <NoteList notes={notes} onDelete={handleDelete} />
     </main>
