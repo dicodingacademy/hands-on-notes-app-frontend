@@ -5,4 +5,9 @@ import { defineConfig } from 'vite';
 // agar Netlify bisa mendeteksinya secara otomatis (zero-configuration).
 export default defineConfig({
   plugins: [react()],
+  test: {
+    environment: 'jsdom',
+    globals: true,
+    setupFiles: './src/__tests__/setup.js',
+  },
 });
