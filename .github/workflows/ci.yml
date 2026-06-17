@@ -1,0 +1,27 @@
+name: Continuous Integration
+
+# Pemicu (trigger): workflow berjalan setiap ada Pull Request menuju branch main.
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    # GitHub meminjamkan komputer virtual (runner) bersistem Ubuntu, gratis untuk repo publik.
+    runs-on: ubuntu-latest
+    # Langkah dijalankan berurutan — persis seperti yang Anda lakukan manual di laptop.
+    steps:
+      - name: Checkout kode          # ambil kode dari repository
+        uses: actions/checkout@v4
+
+      - name: Siapkan Node.js        # pasang Node.js di runner
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Instalasi dependensi   # npm ci: versi cepat & konsisten dari npm install untuk mesin CI
+        run: npm ci
+
+      - name: Jalankan unit test     # jalankan Vitest
+        run: npm run test
