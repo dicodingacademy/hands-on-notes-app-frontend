@@ -14,7 +14,7 @@ function Navbar() {
   return (
     <nav className="navbar">
       <Link to="/" className="navbar-brand">
-        Halaman Catatan
+        Aplikasi Catatan
       </Link>
       <div className="navbar-links">
         {isLoggedIn ? (
