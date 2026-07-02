@@ -4,6 +4,7 @@ import Navbar from './components/Navbar.jsx';
 import { useAuth } from './contexts/AuthContext.jsx';
 import AddNotePage from './pages/AddNotePage.jsx';
 import LoginPage from './pages/LoginPage.jsx';
+import MemeClassifier from './pages/MemeClassifier.jsx';
 import NoteDetailPage from './pages/NoteDetailPage.jsx';
 import NotesPage from './pages/NotesPage.jsx';
 import RegisterPage from './pages/RegisterPage.jsx';
@@ -43,6 +44,14 @@ function App() {
           element={
             <ProtectedRoute>
               <AddNotePage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/meme-classifier"
+          element={
+            <ProtectedRoute>
+              <MemeClassifier />
             </ProtectedRoute>
           }
         />

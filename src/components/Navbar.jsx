@@ -20,6 +20,7 @@ function Navbar() {
         {isLoggedIn ? (
           <>
             <Link to="/add">Tambah Catatan</Link>
+            <Link to="/meme-classifier">Cek Meme</Link>
             <button type="button" onClick={handleLogout} data-cy="logout-button">
               Keluar
             </button>
